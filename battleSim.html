@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title> Wars | Sim </title>
+
+	<!-- CSS  -->
+	<link rel="" href="battleSim2.css" Rel="stylesheet" type="text/css">
+	
+	<!-- BOOTSTRAP CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+</head>
+
+
+
+<body background="https://boygeniusreport.files.wordpress.com/2015/08/darth-vader.jpg?quality=98&strip=all&w=782">
+
+	<font color="red">
+		<h1 id="title"> Star Wars Battle Simulation </h1>
+	</font>
+
+	<font color="white">
+
+		<!-- POPULATE STARSHIP PLAYER 1 & PLAYER 2 SELECT SHIP,PILOT,GENERAL AND SOLDIER -->
+
+		<div class="row">
+			<div class="col-sm-6">
+				<h1>Player 1</h1>
+				<div class="margin-bottom">
+					<div class="col-sm-4">
+						<label> Choose a </label>
+						<button type="button" id="player1" name="button"> Ship </button>
+					</div>
+				</div>
+				<div class="margin-bottom">
+					<div class="col-sm-4">
+						<label>Choose a</label>
+						<button type="button" id="char1" name="button3"> Pilot </button>
+					</div>
+				</div>
+				<div class="margin-bottom">
+					<div class="col-sm-4">
+						<label>Choose </label>
+						<button type="button" id="char3" name="button5"> General(s) </button>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<label>Choose a lead</label>
+					<button type="button" id="char5" name="button7"> Soldier </button>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<h1>Player 2</h1>
+				<div class="row margin-bottom">
+					<div class="col-sm-4">
+						<label> Choose a </label>
+						<button type="button" id="player2" name="button2"> Ship </button>
+					</div>
+				</div>
+				<div class="row margin-bottom">
+					<div class="col-sm-4">
+						<label>Choose a</label>
+						<button type="button" id="char2" name="button4"> Pilot </button>
+					</div>
+				</div>
+				<div class="row margin-bottom">
+					<div class="col-sm-4">
+						<label>Choose </label>
+						<button type="button" id="char4" name="button6"> General(s) </button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<label>Choose a lead</label>
+						<button type="button" id="char6" name="button8"> Soldier </button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</font>
+
+		
+	<!-- POPUATE STARSHIP RESULT SECTION PLAYER 1 & PLAYER 2 -->
+
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="margin-bottom">
+				<div class="col-sm-6">
+					<font color="gold">
+						<p>Ship:</p>
+					</font>
+					<font color="red">
+						<div id="shipInput1"></div>
+					</font>
+				</div>
+			</div>
+			<div class="margin-bottom">
+				<div class="col-sm-6">
+					<font color="gold">
+						<p>Pilot:</p>
+					</font>
+					<font color="red">
+						<div id="inputPerson3"></div>
+					</font>
+				</div>
+			</div>
+			<div class="margin-bottom">
+				<div class="col-sm-6">
+					<font color="gold">
+						<p>General(s):</p>
+					</font>
+					<font color="red">
+						<div id="inputPerson5"></div>
+					</font>
+				</div>
+			</div>
+			<div class="margin-bottom">
+				<div class="col-sm-6">
+					<font color="gold">
+						<p>Lead Solder:</p>
+					</font>
+					<font color="red">
+						<div id="inputPerson7"></div>
+					</font>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!-- PLAYER 2 -->
+		<div class="col-sm-6">
+			<div class="margin-bottom">
+				<div class="col-sm-6">
+					<font color="gold">
+						<p>Ship:</p>
+					</font>
+					<font color="red">
+						<div id="shipInput2"></div>
+					</font>
+				</div>
+			</div>
+			<div class="margin-bottom">
+				<div class="col-sm-6">
+					<font color="gold">
+						<p>Pilot:</p>
+					</font>
+					<font color="red">
+						<div id="inputPerson4"></div>
+					</font>
+				</div>
+			</div>
+			<div class="margin-bottom">
+				<div class="col-sm-6">
+					<font color="gold">
+						<p>General(s):</p>
+					</font>
+					<font color="red">
+						<div id="inputPerson6"></div>
+					</font>
+				</div>
+			</div>
+			<div class="margin-bottom">
+				<div class="col-sm-6">
+					<font color="gold">
+						<p>Lead Soldier:</p>
+					</font>
+					<font color="red">
+						<div id="inputPerson8"></div>
+					</font>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<font color="gold">
+		<h2>Choose A Weapon:</h2>
+		<select id="weaponsList">
+			<option value="list">---</option>
+		</select>
+	</font>
+
+	<a href="#" onclick="openBattleModal();" name="battleButton"class="button" id="battleButton">Begin Battle</a>
+
+
+	<!-- Modal Section -->
+	<div name="modal" class=".modal-bg" style="display:none">
+		<div class=".modal-content">
+			<form action="">
+				<p>Player 1 Ship Details</p>
+				<li>Ship Name:</li>
+				<li>Pilot:</li>
+				<li>General:</li>
+				<li>Soldier:</li>
+				<li>Weapon:</li>
+				<a href="" class="button">Fight</a>
+			</form>
+		</div>
+
+	</div>
+
+
+	<!-- //MAIN CONTROLLER -->
+	<script src="battleCtrl.js"></script>
+
+	<!-- JAVASCRIPT LIBRARY FOR CLEAN CALL HANDLEING -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<!-- BOOTSTRAP JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
